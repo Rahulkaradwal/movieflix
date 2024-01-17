@@ -45,10 +45,10 @@ function App() {
       );
       setMovieData(search);
     }
-  });
+  }, [searchInput]);
   return (
     <div>
-      <Navbar setSearchInput={setSearchInput} />
+      <Navbar setSearchInput={setSearchInput} movieData={movieData} />
       <Main
         movieData={movieData}
         isBoxOpen={isBoxOpen}

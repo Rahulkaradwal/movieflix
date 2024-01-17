@@ -1,7 +1,8 @@
 import React from "react";
 import Search from "./Search";
+import SearchResult from "./SearchResult";
 
-function Navbar({ setSearchInput }) {
+function Navbar({ setSearchInput, movieData }) {
   return (
     <div className="nav-bar">
       <div className="logo">
@@ -11,7 +12,7 @@ function Navbar({ setSearchInput }) {
       <div>
         <Search setSearchInput={setSearchInput} />
       </div>
-      <div className="num-results">Found X top results</div>
+      <SearchResult movieData={movieData} />
     </div>
   );
 }
