@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import "./index.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const tempMovieData = [
   {
@@ -28,13 +28,27 @@ const tempMovieData = [
 ];
 
 function App() {
-  const [movieData, setMovieData] = useState(tempMovieData);
   const [isBoxOpen, SetBoxOpen] = useState(true);
   const [isWatchedBoxOpen, setWatchedBoxOpen] = useState(true);
 
+  const [searchInput, setSearchInput] = useState("");
+  const [movieData, setMovieData] = useState([]);
+
+  useEffect(() => {
+    if (searchInput === "") {
+      setMovieData(tempMovieData);
+    } else {
+      if (searchInput === "") return;
+
+      let search = tempMovieData.filter((movie) =>
+        movie.Title.toLowerCase().includes(searchInput.toLowerCase())
+      );
+      setMovieData(search);
+    }
+  });
   return (
     <div>
-      <Navbar />
+      <Navbar setSearchInput={setSearchInput} />
       <Main
         movieData={movieData}
         isBoxOpen={isBoxOpen}
