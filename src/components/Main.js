@@ -1,10 +1,10 @@
 import React from "react";
 import Box from "./Box";
 
-function Main() {
+function Main({ movieData }) {
   return (
     <div className="main">
-      <Box />
+      <Box movieData={movieData} />
       <Box />
     </div>
   );
