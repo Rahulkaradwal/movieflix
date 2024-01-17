@@ -2,7 +2,7 @@ import React from "react";
 import Search from "./Search";
 import SearchResult from "./SearchResult";
 
-function Navbar({ setSearchInput, movieData }) {
+function Navbar({ setSearchInput, movieData, searchInput }) {
   return (
     <div className="nav-bar">
       <div className="logo">
@@ -12,7 +12,7 @@ function Navbar({ setSearchInput, movieData }) {
       <div>
         <Search setSearchInput={setSearchInput} />
       </div>
-      <SearchResult movieData={movieData} />
+      <SearchResult movieData={movieData} searchInput={searchInput} />
     </div>
   );
 }
