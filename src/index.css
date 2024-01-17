@@ -339,6 +339,32 @@ body {
   justify-content: center;
 }
 
+.movieDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  font-size: 14px;
+}
+.movieDetail > img {
+  height: 300px;
+  width: 250px;
+}
+.movieDetail > button {
+  padding: 7px 10px;
+  border-radius: 3px;
+  border: none;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.movieDetail > button:hover {
+  opacity: 0.8;
+  scale: 1.1;
+}
+
 /*
 SPACING SYSTEM (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import WatchedSummary from "./WatchedSummary";
 import WatchedMoviesList from "./WatchedMoviesList";
+import Watched from "./Watched";
+import MovieDetail from "./MovieDetail";
 
 const tempWatchedData = [
   {
@@ -26,7 +28,7 @@ const tempWatchedData = [
 ];
 
 function WatchedBox({ isWatchedBoxOpen, setWatchedBoxOpen }) {
-  const [watchedData, setWatchedData] = useState(tempWatchedData);
+  const [watchedData, setWatchedData] = useState([]);
   return (
     <div className="box">
       <button
@@ -37,6 +39,7 @@ function WatchedBox({ isWatchedBoxOpen, setWatchedBoxOpen }) {
       </button>
       <WatchedSummary watchedData={watchedData} />
       {isWatchedBoxOpen && <WatchedMoviesList watchedData={watchedData} />}
+      <MovieDetail />
     </div>
   );
 }
