@@ -29,10 +29,19 @@ const tempMovieData = [
 
 function App() {
   const [movieData, setMovieData] = useState(tempMovieData);
+  const [isBoxOpen, SetBoxOpen] = useState(true);
+  const [isWatchedBoxOpen, setWatchedBoxOpen] = useState(true);
+
   return (
     <div>
       <Navbar />
-      <Main movieData={movieData} />
+      <Main
+        movieData={movieData}
+        isBoxOpen={isBoxOpen}
+        SetBoxOpen={SetBoxOpen}
+        isWatchedBoxOpen={isWatchedBoxOpen}
+        setWatchedBoxOpen={setWatchedBoxOpen}
+      />
     </div>
   );
 }

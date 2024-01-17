@@ -25,13 +25,18 @@ const tempWatchedData = [
   },
 ];
 
-function WatchedBox() {
+function WatchedBox({ isWatchedBoxOpen, setWatchedBoxOpen }) {
   const [watchedData, setWatchedData] = useState(tempWatchedData);
   return (
     <div className="box">
-      <button className="btn-toggle">-</button>
+      <button
+        className="btn-toggle"
+        onClick={() => setWatchedBoxOpen(!isWatchedBoxOpen)}
+      >
+        {isWatchedBoxOpen ? "-" : "+"}
+      </button>
       <WatchedSummary watchedData={watchedData} />
-      <WatchedMoviesList watchedData={watchedData} />
+      {isWatchedBoxOpen && <WatchedMoviesList watchedData={watchedData} />}
     </div>
   );
 }

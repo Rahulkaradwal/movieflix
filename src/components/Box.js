@@ -1,11 +1,15 @@
-import React from "react";
 import MovieList from "./MovieList";
 
-function Box({ movieData }) {
+function Box({ movieData, isBoxOpen, SetBoxOpen }) {
   return (
     <div className="box">
-      <button className="btn-toggle">-</button>
-      <MovieList movieData={movieData} />
+      <button
+        className="btn-toggle"
+        onClick={() => SetBoxOpen((s) => !isBoxOpen)}
+      >
+        {isBoxOpen ? "-" : "+"}
+      </button>
+      {isBoxOpen && <MovieList movieData={movieData} />}
     </div>
   );
 }
