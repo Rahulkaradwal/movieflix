@@ -65,6 +65,8 @@ function App() {
 
   const [movieDetail, setMovieDetail] = useState([]);
 
+  const [watchList, setWatchList] = useState([]);
+
   useEffect(() => {
     if (searchInput === "") {
       setMovieData(tempMovieData);
@@ -85,6 +87,8 @@ function App() {
         searchInput={searchInput}
       />
       <Main
+        watchList={watchList}
+        setWatchList={setWatchList}
         setMovieDetail={setMovieDetail}
         movieDetail={movieDetail}
         movieData={movieData}

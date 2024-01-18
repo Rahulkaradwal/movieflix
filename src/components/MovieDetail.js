@@ -1,6 +1,14 @@
 import React from "react";
 
-function MovieDetail({ movieDetail }) {
+function MovieDetail({ movieDetail, setWatchList, setMovieDetail }) {
+  const handleWatchList = () => {
+    console.log("add to list button clicked");
+  };
+
+  const handleCancel = () => {
+    setMovieDetail([]);
+  };
+
   return (
     <div className="movieDetail">
       <img src={movieDetail.Poster} />
@@ -10,8 +18,8 @@ function MovieDetail({ movieDetail }) {
       <p>User Rating :{movieDetail.userRating}</p>
       <p>Runtime :{movieDetail.runtime} mins</p>
       <div className="movieDetail-btns">
-        <button>Add to Watchlist</button>
-        <button>Cancel</button>
+        <button onClick={handleWatchList}>Add to Watchlist</button>
+        <button onClick={handleCancel}>Cancel</button>
       </div>
     </div>
   );
