@@ -35,7 +35,7 @@ const tempMovieData = [
     userRating: 9,
   },
   {
-    imdbID: "tt1375666",
+    imdbID: "tt1375668",
     Title: "Inception",
     Year: "2010",
     Poster:
@@ -63,6 +63,8 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
   const [movieData, setMovieData] = useState([]);
 
+  const [movieDetail, setMovieDetail] = useState([]);
+
   useEffect(() => {
     if (searchInput === "") {
       setMovieData(tempMovieData);
@@ -83,6 +85,8 @@ function App() {
         searchInput={searchInput}
       />
       <Main
+        setMovieDetail={setMovieDetail}
+        movieDetail={movieDetail}
         movieData={movieData}
         isBoxOpen={isBoxOpen}
         SetBoxOpen={SetBoxOpen}

@@ -1,8 +1,11 @@
 import React from "react";
 
-function Movie({ movie }) {
+function Movie({ movie, setMovieDetail }) {
+  const handleClick = () => {
+    setMovieDetail(movie);
+  };
   return (
-    <li>
+    <li onClick={handleClick}>
       <img src={movie.Poster} alt={`${movie.Title} poster`} />
       <h3>{movie.Title}</h3>
       <div>

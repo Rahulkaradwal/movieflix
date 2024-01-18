@@ -1,6 +1,6 @@
 import MovieList from "./MovieList";
 
-function Box({ movieData, isBoxOpen, SetBoxOpen }) {
+function Box({ movieData, isBoxOpen, SetBoxOpen, setMovieDetail }) {
   return (
     <div className="box">
       <button
@@ -9,7 +9,9 @@ function Box({ movieData, isBoxOpen, SetBoxOpen }) {
       >
         {isBoxOpen ? "-" : "+"}
       </button>
-      {isBoxOpen && <MovieList movieData={movieData} />}
+      {isBoxOpen && (
+        <MovieList movieData={movieData} setMovieDetail={setMovieDetail} />
+      )}
     </div>
   );
 }

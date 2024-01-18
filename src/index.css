@@ -144,8 +144,12 @@ body {
 .list-watched {
   height: calc(100% - 9rem);
 }
+.list li:hover {
+  scale: 0.9;
+}
 
 .list li {
+  cursor: pointer;
   position: relative;
   display: grid;
   grid-template-columns: 4rem 1fr;
@@ -153,9 +157,10 @@ body {
   column-gap: 2.4rem;
   font-size: 1.6rem;
   align-items: center;
-
+  overflow: hidden;
   padding: 1.6rem 3.2rem;
   border-bottom: 1px solid var(--color-background-100);
+  transition: 0.3s all;
 }
 
 .list.list-movies li {
@@ -340,6 +345,8 @@ body {
 }
 
 .movieDetail {
+  padding: 10px;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -349,8 +356,9 @@ body {
 .movieDetail > img {
   height: 300px;
   width: 250px;
+  border-radius: 5px;
 }
-.movieDetail > button {
+.movieDetail-btns button {
   padding: 7px 10px;
   border-radius: 3px;
   border: none;
@@ -359,8 +367,9 @@ body {
   font-size: 13px;
   cursor: pointer;
   transition: 0.3s all;
+  margin: 10px;
 }
-.movieDetail > button:hover {
+.movieDetail-btns button:hover {
   opacity: 0.8;
   scale: 1.1;
 }
