@@ -47,6 +47,7 @@ function WatchedBox({
 
       {isWatchedBoxOpen && movieDetail.length !== 0 ? (
         <MovieDetail
+          watchList={watchList}
           movieDetail={movieDetail}
           setWatchList={setWatchList}
           setMovieDetail={setMovieDetail}

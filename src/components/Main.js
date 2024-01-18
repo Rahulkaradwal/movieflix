@@ -17,12 +17,14 @@ function Main({
     <div className="main">
       <Box
         setWatchList={setWatchList}
+        watchList={watchList}
         setMovieDetail={setMovieDetail}
         movieData={movieData}
         isBoxOpen={isBoxOpen}
         SetBoxOpen={SetBoxOpen}
       />
       <WatchedBox
+        setWatchList={setWatchList}
         watchList={watchList}
         setMovieDetail={setMovieDetail}
         movieDetail={movieDetail}

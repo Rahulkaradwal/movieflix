@@ -1,8 +1,8 @@
 import React from "react";
 
-function MovieDetail({ movieDetail, setWatchList, setMovieDetail }) {
+function MovieDetail({ movieDetail, watchList, setWatchList, setMovieDetail }) {
   const handleWatchList = () => {
-    console.log("add to list button clicked");
+    setWatchList([...watchList, movieDetail]);
   };
 
   const handleCancel = () => {
