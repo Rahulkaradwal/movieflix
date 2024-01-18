@@ -1,6 +1,7 @@
 import React from "react";
 
 function WatchedSummary({ watchedData }) {
+  console.log(watchedData);
   return (
     <div className="summary">
       <h2>Movies you watched</h2>

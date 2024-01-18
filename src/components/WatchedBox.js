@@ -35,7 +35,6 @@ function WatchedBox({
   movieDetail,
   setWatchList,
 }) {
-  const [watchedData, setWatchedData] = useState(watchList);
   return (
     <div className="box">
       <button
@@ -53,10 +52,10 @@ function WatchedBox({
           setMovieDetail={setMovieDetail}
         />
       ) : (
-        <WatchedSummary watchedData={watchedData} />
+        <WatchedSummary watchedData={watchList} />
       )}
       {isWatchedBoxOpen && movieDetail.length === 0 && (
-        <WatchedMoviesList watchedData={watchedData} />
+        <WatchedMoviesList watchedData={watchList} />
       )}
     </div>
   );
