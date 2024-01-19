@@ -1,6 +1,4 @@
-import MovieList from "./MovieList";
-
-function Box({ movieData, isBoxOpen, SetBoxOpen, setMovieDetail }) {
+function Box({ isBoxOpen, SetBoxOpen, children }) {
   return (
     <div className="box">
       <button
@@ -9,9 +7,7 @@ function Box({ movieData, isBoxOpen, SetBoxOpen, setMovieDetail }) {
       >
         {isBoxOpen ? "-" : "+"}
       </button>
-      {isBoxOpen && (
-        <MovieList movieData={movieData} setMovieDetail={setMovieDetail} />
-      )}
+      {isBoxOpen && children}
     </div>
   );
 }

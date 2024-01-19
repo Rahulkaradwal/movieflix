@@ -2,7 +2,11 @@ import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import "./index.css";
 import { useEffect, useState } from "react";
-
+import Search from "./components/Search";
+import SearchResult from "./components/SearchResult";
+import Box from "./components/Box";
+import WatchedBox from "./components/WatchedBox";
+import MovieList from "./components/MovieList";
 const tempMovieData = [
   {
     imdbID: "tt1375666",
@@ -81,22 +85,29 @@ function App() {
   }, [searchInput]);
   return (
     <div>
-      <Navbar
-        setSearchInput={setSearchInput}
-        movieData={movieData}
-        searchInput={searchInput}
-      />
-      <Main
-        watchList={watchList}
-        setWatchList={setWatchList}
-        setMovieDetail={setMovieDetail}
-        movieDetail={movieDetail}
-        movieData={movieData}
-        isBoxOpen={isBoxOpen}
-        SetBoxOpen={SetBoxOpen}
-        isWatchedBoxOpen={isWatchedBoxOpen}
-        setWatchedBoxOpen={setWatchedBoxOpen}
-      />
+      <Navbar>
+        <div className="logo">
+          <span>📽️</span>
+          <h1>MovieFlix</h1>
+        </div>
+        <div>
+          <Search setSearchInput={setSearchInput} />
+        </div>
+        <SearchResult movieData={movieData} searchInput={searchInput} />
+      </Navbar>
+      <Main>
+        <Box isBoxOpen={isBoxOpen} SetBoxOpen={SetBoxOpen}>
+          <MovieList movieData={movieData} setMovieDetail={setMovieDetail} />
+        </Box>
+        <WatchedBox
+          setWatchList={setWatchList}
+          watchList={watchList}
+          setMovieDetail={setMovieDetail}
+          movieDetail={movieDetail}
+          isWatchedBoxOpen={isWatchedBoxOpen}
+          setWatchedBoxOpen={setWatchedBoxOpen}
+        />
+      </Main>
     </div>
   );
 }

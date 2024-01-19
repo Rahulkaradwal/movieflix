@@ -1,20 +1,5 @@
-import React from "react";
-import Search from "./Search";
-import SearchResult from "./SearchResult";
-
-function Navbar({ setSearchInput, movieData, searchInput }) {
-  return (
-    <div className="nav-bar">
-      <div className="logo">
-        <span>📽️</span>
-        <h1>MovieFlix</h1>
-      </div>
-      <div>
-        <Search setSearchInput={setSearchInput} />
-      </div>
-      <SearchResult movieData={movieData} searchInput={searchInput} />
-    </div>
-  );
+function Navbar({ children }) {
+  return <div className="nav-bar">{children}</div>;
 }
 
 export default Navbar;
