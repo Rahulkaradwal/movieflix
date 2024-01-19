@@ -55,7 +55,10 @@ function WatchedBox({
         <WatchedSummary watchedData={watchList} />
       )}
       {isWatchedBoxOpen && movieDetail.length === 0 && (
-        <WatchedMoviesList watchedData={watchList} />
+        <WatchedMoviesList
+          watchedData={watchList}
+          setWatchList={setWatchList}
+        />
       )}
     </div>
   );

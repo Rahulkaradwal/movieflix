@@ -374,10 +374,14 @@ body {
   scale: 1.1;
 }
 
-/*
-SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
+.watchedList {
+  position: relative;
+}
 
-FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
-*/
+.remove-btn {
+  position: absolute;
+  right: -15px;
+  top: -5px;
+  font-size: large;
+  cursor: pointer;
+}
